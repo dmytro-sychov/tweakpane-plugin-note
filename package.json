@@ -1,6 +1,6 @@
 {
 	"name": "@mad-pillow/tweakpane-plugin-note",
-	"version": "0.1.1",
+	"version": "0.1.0",
 	"description": "Multiline note plugin for Tweakpane",
 	"main": "dist/tweakpane-plugin-note.js",
 	"type": "module",
