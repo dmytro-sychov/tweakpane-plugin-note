@@ -22,7 +22,7 @@ Simple multiline readonly note for [Tweakpane][tweakpane].
 
 ```js
 import {Pane} from 'tweakpane';
-import * as TweakpaneNotePlugin from '@tweakpane/plugin-note';
+import * as TweakpaneNotePlugin from '@mad-pillow/tweakpane-plugin-note';
 
 const pane = new Pane();
 pane.registerPlugin(TweakpaneNotePlugin);
