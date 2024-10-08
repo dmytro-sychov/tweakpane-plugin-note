@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	<script type="module">
-		import {Pane} from '../node_modules/tweakpane/dist/tweakpane.min.js';
-		import * as TweakpaneTemplatePlugin from '../dist/tweakpane-plugin-template.js';
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+	</head>
+	<body>
+		<script type="module">
+			import {Pane} from '../node_modules/tweakpane/dist/tweakpane.min.js';
+			import * as TweakpaneNotePlugin from '../dist/tweakpane-plugin-note.js';
 
-		const params = {
-			prop: 3,
-		};
+			const params = {
+				content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, \
+					ipsam sequi iste amet labore unde omnis provident sed eligendi beatae \
+					nesciunt tempora officia totam pariatur, saepe voluptates deserunt illo! \
+					Doloremque?`,
+			};
 
-		const pane = new Pane();
-		// Register plugin
-		pane.registerPlugin(TweakpaneTemplatePlugin);
+			const pane = new Pane();
+			pane.registerPlugin(TweakpaneNotePlugin);
 
-		// TODO: Update parameters for your plugin
-		pane.addBinding(params, 'prop', {
-			view: 'dots',
-		}).on('change', (ev) => {
-			console.log(ev.value);
-		});
+			pane.addBinding(params, 'content', {
+				readonly: true,
+				view: 'note',
+			});
 
-		window.pane = pane;
-	</script>
-</body>
+			window.pane = pane;
+		</script>
+	</body>
 </html>
