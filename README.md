@@ -2,6 +2,8 @@
 
 Simple multiline readonly note for [Tweakpane][tweakpane].
 
+![sample](sample.png)
+
 ## Installation
 
 ### Browser
@@ -33,6 +35,7 @@ const params = {
 	content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ipsam sequi iste amet labore unde omnis provident sed eligendi beatae nesciunt tempora officia totam pariatur, saepe voluptates deserunt illo! Doloremque?`,
 };
 
+// Important! The "readonly" parameter must be added with the value true.
 pane.addBinding(params, 'content', {
 	readonly: true,
 	view: 'note',
