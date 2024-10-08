@@ -9,8 +9,5 @@ const Package = JSON.parse(
 
 // `@tweakpane/plugin-foobar` -> `tweakpane-plugin-foobar`
 // `tweakpane-plugin-foobar`  -> `tweakpane-plugin-foobar`
-const name = Package.name
-	.split(/[@/-]/)
-	.reduce((comps, comp) => (comp !== '' ? [...comps, comp] : comps), [])
-	.join('-');
+const name = Package.name.split('/').pop();
 console.log(name);

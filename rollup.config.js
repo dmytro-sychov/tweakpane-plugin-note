@@ -58,10 +58,7 @@ function getPlugins(css, shouldMinify) {
 function getDistName(packageName) {
 	// `@tweakpane/plugin-foobar` -> `tweakpane-plugin-foobar`
 	// `tweakpane-plugin-foobar`  -> `tweakpane-plugin-foobar`
-	return packageName
-		.split(/[@/-]/)
-		.reduce((comps, comp) => (comp !== '' ? [...comps, comp] : comps), [])
-		.join('-');
+	return packageName.split('/').pop();
 }
 
 export default async () => {
