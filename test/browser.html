@@ -10,18 +10,24 @@
 			import * as TweakpaneNotePlugin from '../dist/tweakpane-plugin-note.js';
 
 			const params = {
-				content: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, \
+				['Name']: 'Lorem',
+				['Content']: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, \
 					ipsam sequi iste amet labore unde omnis provident sed eligendi beatae \
 					nesciunt tempora officia totam pariatur, saepe voluptates deserunt illo! \
 					Doloremque?`,
 			};
 
-			const pane = new Pane();
-			pane.registerPlugin(TweakpaneNotePlugin);
+			const pane = new Pane({
+				title: 'Pane',
+			});
 
-			pane.addBinding(params, 'content', {
+			pane.registerPlugin(TweakpaneNotePlugin);
+			pane.addBinding(params, 'Name');
+
+			pane.addBinding(params, 'Content', {
 				readonly: true,
 				view: 'note',
+				titleDisabled: true,
 			});
 
 			window.pane = pane;

@@ -3,6 +3,7 @@ import {BufferedValue, ClassName, View, ViewProps} from '@tweakpane/core';
 interface Config {
 	value: BufferedValue<string>;
 	viewProps: ViewProps;
+	titleDisabled: boolean;
 }
 
 // Create a class name generator from the view name
@@ -19,6 +20,11 @@ export class PluginView implements View {
 		// Create a root element for the plugin
 		this.element = doc.createElement('div');
 		this.element.classList.add(className());
+
+		if (config.titleDisabled) {
+			this.element.classList.add(className('notitle'));
+		}
+
 		// Bind view props to the element
 		config.viewProps.bindClassModifiers(this.element);
 
