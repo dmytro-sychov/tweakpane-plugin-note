@@ -2,7 +2,11 @@
 
 Simple multiline readonly note for [Tweakpane][tweakpane].
 
-![sample](sample.png)
+![sample-01](assets/sample-01.png)
+
+![sample-02](assets/sample-02.png)
+
+![sample-03](assets/sample-03.png)
 
 ## Installation
 
@@ -39,6 +43,7 @@ const params = {
 pane.addBinding(params, 'content', {
 	readonly: true,
 	view: 'note',
+	titleDisabled: true, // Default value - false
 });
 ```
 
