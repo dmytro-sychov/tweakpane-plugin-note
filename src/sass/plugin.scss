@@ -1,14 +1,13 @@
 // Import core styles
 @use '../../node_modules/@tweakpane/core/lib/sass/tp';
 
-// Additional style for the plugin
-.#{tp.$prefix}-lblv_l {
-	display: none;
-}
-
-.#{tp.$prefix}-lblv_v {
+.#{tp.$prefix}-lblv_v:has(*[class*='notitle']) {
 	flex-grow: 1;
 	width: 100%;
+}
+
+.#{tp.$prefix}-lblv_l:has(~ *[class*='lblv_v'] *[class*='notitle']) {
+	display: none;
 }
 
 .#{tp.$prefix}-tnpv {

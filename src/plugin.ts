@@ -10,6 +10,7 @@ import {PluginController} from './controller.js';
 export interface PluginMonitorParams extends BaseMonitorParams {
 	view: 'note';
 	readonly: true;
+	titleDisabled: boolean;
 }
 
 export const MonitorNotePlugin: MonitorBindingPlugin<
@@ -34,6 +35,7 @@ export const MonitorNotePlugin: MonitorBindingPlugin<
 		const result = parseRecord<PluginMonitorParams>(params, (p) => ({
 			readonly: p.required.constant(true),
 			view: p.required.constant('note'),
+			titleDisabled: p.optional.boolean,
 		}));
 
 		if (!result) {
@@ -61,6 +63,7 @@ export const MonitorNotePlugin: MonitorBindingPlugin<
 		return new PluginController(args.document, {
 			value: args.value,
 			viewProps: args.viewProps,
+			titleDisabled: args.params.titleDisabled,
 		});
 	},
 });
